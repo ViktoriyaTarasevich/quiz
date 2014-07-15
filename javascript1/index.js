@@ -36,4 +36,11 @@ function getValueFromArray(){
 //5
 var c = eval(a*flag || b*(!flag));
 
+//6
+function getValueFromRegexp(){
+	var str = flag.toString();
+	var res = (str.match(/true/) || a) ^ (str.match(/false/) || b);
+	return res;
+}
+
 
