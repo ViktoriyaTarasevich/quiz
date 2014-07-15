@@ -1,5 +1,5 @@
-var a = 3;
-var b = 5;
+var a = -13;
+var b = 0;
 
 var flag = false;
 //1 
@@ -39,8 +39,20 @@ var c = eval(a*flag || b*(!flag));
 //6
 function getValueFromRegexp(){
 	var str = flag.toString();
-	var res = (str.match(/true/) || a) ^ (str.match(/false/) || b);
+	var res = (str.match(/true/) || a) && (str.match(/false/) || b);
 	return res;
 }
 
+//7
+
+var c = (flag || a) ^ (flag || b);
+
+//8
+
+function getValueFromArrayTwo(){
+	var tempList = [0,1];
+	var tempNumper = Number(flag) + 1;
+	var c =  (((tempNumper) in tempList || a ) ^ ((tempNumper) in tempList || b));
+	return c;
+}
 
